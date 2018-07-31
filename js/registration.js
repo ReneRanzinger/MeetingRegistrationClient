@@ -21,8 +21,6 @@ function RegistrationSuccess() {
     var comments = $("#comments").val();
 
     var form_object = {
-        operation: "AND",
-        query_type: "registration_query",
         conferenceCode: conferenceCode,
         title: title,
         firstName: first_name,
@@ -35,18 +33,21 @@ function RegistrationSuccess() {
         phone: phone_num,
         profession: profession,
         promotionCode: promo_code,
-        fee: registration_fee,
+        fee: "",
         diet: diet,
         comment: comments
     };
-    var json = "query=" + JSON.stringify(form_object);
     $.ajax({
         type: 'post',
-        url: "",
-        data: json,
+        url: "http://localhost:8080/registration/register",
+        dataType: 'application/json',
+        data: form_object,
         success: function(results) {
-            var resultJSONobj = $.parseJSON(results);
-
+            alert('sucess');
+        },
+        error: function(response) {
+            console.log(response);
+            alert('fail')
         }
     });
 }
@@ -54,7 +55,7 @@ function RegistrationSuccess() {
 function WhichDivToHide() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/conference/info/A0113",
+        url: "http://localhost:8080/conference/info/A02",
         dataType: "json",
         success: function(data) {
             HiddingDiv(data);
@@ -92,7 +93,7 @@ function HiddingDiv(data) {
 
         var x = document.getElementById("registrationover");
         var y = document.getElementById("registrationnotstarted");
-        var z = document.getElementById("registrationover");
+        var z = document.getElementById("registrationonline");
         x.style.display = "none";
         y.style.display = "none";
         z.style.display = "block";
