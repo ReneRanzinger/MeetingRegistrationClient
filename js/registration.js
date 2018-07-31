@@ -54,43 +54,57 @@ function RegistrationSuccess() {
 function WhichDivToHide() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/conference/info/A01",
+        url: "http://localhost:8080/conference/info/A0113",
         dataType: "json",
-        success: HiddingDiv,
+        success: function(data) {
+            HiddingDiv(data);
+        },
         error: function(response) {
+            hideAllFirst();
             console.log(response);
             alert('fail');
         }
     });
 }
 
-function HiddingDiv(response) {
-    var whattohideJSONobj = response;
-    var statuscode = response["statusCode"];
-    conferenceCode = response["conferenceCode"];
+function hideAllFirst() {
+    var x = document.getElementById("registrationonline");
+    var y = document.getElementById("registrationnotstarted");
+    var z = document.getElementById("registrationover");
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "none";
+}
+
+function HiddingDiv(data) {
+    var statuscode = data['statusCode'];
+    conferenceCode = data[conferenceCode];
     if (statuscode == -1) {
         var x = document.getElementById("registrationonline");
         var y = document.getElementById("registrationnotstarted");
+        var z = document.getElementById("registrationover");
         x.style.display = "none";
         y.style.display = "none";
-        console.log(response);
+        z.style.display = "block";
         alert('sucess');
     }
     if (statuscode == 0) {
 
         var x = document.getElementById("registrationover");
         var y = document.getElementById("registrationnotstarted");
+        var z = document.getElementById("registrationover");
         x.style.display = "none";
         y.style.display = "none";
-        console.log(response);
+        z.style.display = "block";
         alert('sucess');
     }
     if (statuscode == 1) {
         var x = document.getElementById("registrationonline");
         var y = document.getElementById("registrationover");
+        var z = document.getElementById("registrationnotstarted");
         x.style.display = "none";
         y.style.display = "none";
-        console.log(response);
+        z.style.display = "block";
         alert('sucess');
     }
 }
