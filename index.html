@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <body>
-        <div class="container-fluid overallcontainer">
+        <div class="container-fluid overallcontainer" id="registrationonline">
             <div class="container-fluid registrationPadding registrationTitleStyle">
                 SFG - GlycoBioInformatics satellite registration
             </div>
@@ -50,27 +50,66 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="firstname" style="text-align: left;">First Name:</label>
+                        <label class="control-label col-sm-2" for="first_name" style="text-align: left;">First Name:</label>
                         <div class="col-sm-10">
-                            <input type="firstname" class="form-control" id="firstname" placeholder="Enter First Name" name="firstname">
+                            <input type="firstname" class="form-control" id="first_name" placeholder="Enter First Name" name="firstname">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="middlename" style="text-align: left;">Middle Name:</label>
+                        <label class="control-label col-sm-2" for="middle_name" style="text-align: left;">Middle Name:</label>
                         <div class=" col-sm-10 ">
-                            <input type="middlename" class="form-control " id="middlename" placeholder="Enter Middle Name " name="middlename">
+                            <input type="middlename" class="form-control " id="middle_name" placeholder="Enter Middle Name " name="middlename">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="lastname" style="text-align: left;">Last Name:</label>
+                        <label class="control-label col-sm-2" for="last_name" style="text-align: left;">Last Name:</label>
                         <div class=" col-sm-10 ">
-                            <input type="lastname" class="form-control " id="lastname" placeholder="Enter Last Name" name="lastname">
+                            <input type="lastname" class="form-control " id="last_name" placeholder="Enter Last Name" name="lastname">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="registrationfee" style="text-align: left;">Registration Fee:</label>
-                        <div class=" col-sm-10 radio">
-                            <label><input type="radio" class="form-check-input" id="registrationfee" name="registrationfee">Standard registration fee ($0.00)</label>
+                        <label class="control-label col-sm-2" for="phone" style="text-align: left;">Phone:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="phone" class="form-control " id="phone_num" placeholder="Enter Phone Number" name="Phone Number">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label col-sm-2 " for="email " style="text-align: left; ">Email:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="email " class="form-control " id="email " placeholder="Enter Email " name="email ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label col-sm-2 " for="reenter_email " style="text-align: left; ">Re-enter Email:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="reenteremail " class="form-control " id="re_enter_email " placeholder="Re-enter Email " name="reenteremail ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="address" style="text-align: left;">Address:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="address" class="form-control " id="address" placeholder="Enter Address" name="Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="profession" style="text-align: left;">Profession:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="profession" class="form-control " id="profession" placeholder="Enter Profession" name="Profession">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="registration_fee" style="text-align: left;">Registration Fee:</label>
+                        <div class=" col-sm-10 ">
+                            <div class="dropdown" id="reg_fee_drop_down" name="pleaseselect" aria-placeholder="Please Select"><button class="btn btn-default dropdown-toggle btn-block" style="text-align: left;" type="button" data-toggle="dropdown"><font color="grey">Please Select</font><div class="pull-right"><span class="caret"></span></div></button>
+                                <ul class="dropdown-menu btn-block dropdown-menu-right" id="reg_fee_drop_dwn_list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="promocode" style="text-align: left;">Promo Code:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="promocode" class="form-control " id="promo_code" placeholder="Enter promo code" name="Promo Code">
                         </div>
                     </div>
                     <div class="form-group">
@@ -85,31 +124,52 @@
                             <input type="organization" class="form-control " id="organization" placeholder="Enter Organization" name="organization">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="diet" style="text-align: left;">Organization Type:</label>
+                        <div class="col-sm-10">
+                            <div class="dropdown" id="organizationtype" name="pleaseselect" aria-placeholder="Please Select">
+                                <button class="btn btn-default dropdown-toggle btn-block" style="text-align: left;" type="button" data-toggle="dropdown"><font color="grey">Please Select</font><div class="pull-right"><span class="caret"></span></div></button>
+                                <ul class="dropdown-menu btn-block dropdown-menu-right" id="organizationtype1">
+                                    <li>
+                                        <a href="#">Academic.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Non-Profit.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Industrial.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Government.</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="organizationtype" style="text-align: left;">Organization Type:</label>
-                        <div class=" control-label col-sm-10">
-                            <select class=" form-control " id="organizationtype ">
-                        <option>Academic</option>
-                        <option>Nonprofit</option>
-                        <option>Industrial</option>
-                        <option>Government</option>
-                        </select>
+                        <label class="control-label col-sm-2" for="diet" style="text-align: left;">Diet:</label>
+                        <div class="col-sm-10">
+                            <div class="dropdown" id="diet" name="pleaseselect" aria-placeholder="Please Select">
+                                <button class="btn btn-default dropdown-toggle btn-block" style="text-align: left;" type="button" data-toggle="dropdown"><font color="grey">Please Select</font><div class="pull-right"><span class="caret"></span></div></button>
+                                <ul class="dropdown-menu btn-block dropdown-menu-right" id="diet1">
+                                    <li>
+                                        <a href="#">Vegan.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Vegetarian.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Non.Vegetarian</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Other.</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group ">
-                        <label class="control-label col-sm-2 " for="email " style="text-align: left; ">Email:</label>
-                        <div class=" col-sm-10 ">
-                            <input type="email " class="form-control " id="email " placeholder="Enter Email " name="email ">
-                        </div>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label col-sm-2 " for="reenteremail " style="text-align: left; ">Re-enter Email:</label>
-                        <div class=" col-sm-10 ">
-                            <input type="reenteremail " class="form-control " id="reenteremail " placeholder="Re-enter Email " name="reenteremail ">
-                        </div>
-                    </div>
                     <div class="form-group ">
                         <label class="control-label col-sm-2 " for="comments " style="text-align: left; ">Comments:</label>
                         <div class=" col-sm-10 ">
@@ -119,23 +179,43 @@
 
                     <div class="form-group ">
                         <div class="col-sm-offset-2 col-sm-10 ">
-                            <button type="submit " class="btn btn-default ">Register</button>
+                            <button type="submit " class="btn btn-default " onclick="RegistrationSuccess()">Register</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
 
+        <div class="container-fluid overallcontainer" id="registrationnotstarted">
+            <div class="container-fluid registrationInfoContainer infoText" id="registrationnotstarted1">
+                <span style="font-weight: bold;color:#a70505;">Please note:</span><br> Registration runs Wednesday May 01 through Saturday December 01. A registration fee of $60 ($30 for postdocs and students) will be assessed at the time of registration.
+                In case of problems or questions please contact our event manager <b>Cathryn Quinn</b> (cjquinn@uga.edu).
+            </div>
+        </div>
+
+        <div class="container-fluid overallcontainer" id="registrationover">
+            <div class="container-fluid registrationInfoContainer infoText" id="registrationover1">
+                The registration was closed on Friday December 01. In case of problems or questions please contact our event manager
+                <b>Cathryn Quinn</b> (cjquinn@uga.edu).
+                <p>
+                    <span style="font-weight: bold;color:#a70505;">Please note:</span> Registration for the satellite meeting on this page allows to attend the satellite only. If you plan to participate in the SFG meeting as well please use the
+                    <a href="http://www.glycobiology.org/registration.php">main registration page</a> to sign up for the main meeting.
+                </p>
+
+            </div>
+        </div>
+
+
         <script type="text/javascript" src="js/registration.js">
         </script>
-
-
 
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+    <!--Script for jquery-->
+    <script type="text/javascript" src="libraries/jquery/jquery-3.1.js"></script>
     <link type="text/css " rel="stylesheet " href="main_styles.css " />
     <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
 </head>
 
-</ht
+</html>
