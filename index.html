@@ -35,19 +35,15 @@
             <div class="container-fluid registrationContainer ">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="title" style="text-align: left;">Title:</label>
-                        <div class="col-sm-10">
-                            <div class="dropdown" id="title1" name="pleaseselect" aria-placeholder="Please Select">
-                                <button class="btn btn-default dropdown-toggle btn-block" style="text-align: left;" type="button" data-toggle="dropdown"><font color="grey">Please Select</font>
-    <div class="pull-right"><span class="caret" ></span></div></button>
-                                <ul class="dropdown-menu btn-block dropdown-menu-right" id="title">
-                                    <li><a href="#">Prof.</a></li>
-                                    <li><a href="#">Dr.</a></li>
-                                    <li><a href="#">Mr.</a></li>
-                                    <li><a href="#">Mrs.</a></li>
-                                    <li><a href="#">Miss.</a></li>
-                                </ul>
-                            </div>
+                        <label class="control-label col-sm-2" for="registration_fee" style="text-align: left;">Title:</label>
+                        <div class=" control-label col-sm-10">
+                            <select class=" form-control " id="title">
+                        <option>Prof.</option>
+                        <option>Dr.</option>
+                        <option>Mr.</option>
+                        <option>Mrs.</option>
+                        <option>Miss.</option>
+                        </select>
                         </div>
                     </div>
 
@@ -101,13 +97,12 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="registration_fee" style="text-align: left;">Registration Fee:</label>
-                        <div class=" col-sm-10 ">
-                            <div class="dropdown" id="reg_fee_drop_down" name="pleaseselect" aria-placeholder="Please Select"><button class="btn btn-default dropdown-toggle btn-block" style="text-align: left;" type="button" data-toggle="dropdown"><font color="grey">Please Select</font><div class="pull-right"><span class="caret"></span></div></button>
-                                <ul class="dropdown-menu btn-block dropdown-menu-right" id="reg_fee_drop_dwn_list">
-                                </ul>
-                            </div>
+                        <div class=" control-label col-sm-10">
+                            <select class=" form-control " id="registrationfee">
+                        </select>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="promocode" style="text-align: left;">Promo Code:</label>
                         <div class=" col-sm-10 ">
@@ -127,48 +122,26 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="diet" style="text-align: left;">Organization Type:</label>
-                        <div class="col-sm-10">
-                            <div class="dropdown" id="organizationtype" name="pleaseselect" aria-placeholder="Please Select">
-                                <button class="btn btn-default dropdown-toggle btn-block" style="text-align: left;" type="button" data-toggle="dropdown"><font color="grey">Please Select</font><div class="pull-right"><span class="caret"></span></div></button>
-                                <ul class="dropdown-menu btn-block dropdown-menu-right" id="organizationtype1">
-                                    <li>
-                                        <a href="#">Academic.</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Non-Profit.</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Industrial.</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Government.</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <label class="control-label col-sm-2" for="organizationtype" style="text-align: left;">Organization Type:</label>
+                        <div class=" control-label col-sm-10">
+                            <select class=" form-control " id="organizationtype">
+                        <option>Academic</option>
+                        <option>Nonprofit</option>
+                        <option>Industrial</option>
+                        <option>Government</option>
+                        </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="diet" style="text-align: left;">Diet:</label>
-                        <div class="col-sm-10">
-                            <div class="dropdown" id="diet" name="pleaseselect" aria-placeholder="Please Select">
-                                <button class="btn btn-default dropdown-toggle btn-block" style="text-align: left;" type="button" data-toggle="dropdown"><font color="grey">Please Select</font><div class="pull-right"><span class="caret"></span></div></button>
-                                <ul class="dropdown-menu btn-block dropdown-menu-right" id="diet1">
-                                    <li>
-                                        <a href="#">Vegan.</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Vegetarian.</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Non.Vegetarian</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Other.</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class=" control-label col-sm-10">
+                            <select class=" form-control " id="diet">
+                        <option>Vegan</option>
+                        <option>Vegetarian</option>
+                        <option>Non Vegetarianl</option>
+                        <option>Other</option>
+                        </select>
                         </div>
                     </div>
 
@@ -215,7 +188,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
     <!--Script for jquery-->
     <script type="text/javascript" src="libraries/jquery/jquery-3.1.js"></script>
-    <link type="text/css " rel="stylesheet " href="main_styles.css " />
     <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
 </head>
 

@@ -1,8 +1,18 @@
 var conferenceCode;
+var regfeeobject;
+var selectedRegFee;
+var titleselected;
+var orgtypeselected;
+var dietselected;
 
 
 function RegistrationSuccess() {
-    var title = $("#title").val();
+    getselectedtitlevalue();
+    getSelectedRegistrationFee();
+    getselectedorgtypevalue();
+    getselecteddietvalue()
+
+    var title = titleselected;
     var first_name = $("#first_name").val();
     var middle_name = $("#middle_name").val();
     var last_name = $("#last_name").val();
@@ -11,13 +21,12 @@ function RegistrationSuccess() {
     var re_enter_email = $("#re_enter_email").val();
     var address = $("#address");
     var profession = $("#profession");
-    var registration_fee = $("#registration_fee").val();
+    var registration_fee = regfeeobject;
     var promo_code = $("#promo_code")
     var department = $("#department").val();
     var organization = $("#organization").val();
-    var organization_type = $("#organizationtype").val;
-    var diet = $("#diet").val;
-
+    var organization_type = orgtypeselected;
+    var diet = dietselected;
     var comments = $("#comments").val();
 
     var form_object = {
@@ -33,15 +42,15 @@ function RegistrationSuccess() {
         phone: phone_num,
         profession: profession,
         promotionCode: promo_code,
-        fee: "",
-        diet: diet,
-        comment: comments
+        fee: [regfeeobject],
+        comment: comments,
+        diet: diet
     };
     $.ajax({
         type: 'post',
         url: "http://localhost:8080/registration/register",
         dataType: 'application/json',
-        data: form_object,
+        data: JSON.stringify(form_object),
         success: function(results) {
             alert('sucess');
         },
@@ -50,6 +59,33 @@ function RegistrationSuccess() {
             alert('fail')
         }
     });
+}
+
+function getselectedtitlevalue() {
+    var titleddl = document.getElementById("title");
+    titleselected = titleddl.options[titleddl.selectedIndex].value;
+}
+
+function getselectedorgtypevalue() {
+    var orgtypeddl = document.getElementById("organizationtype");
+    orgtypeselected = orgtypeddl.options[orgtypeddl.selectedIndex].value;
+}
+
+function getselecteddietvalue() {
+    var dietddl = document.getElementById("diet");
+    dietselected = dietddl.options[dietddl.selectedIndex].value;
+}
+
+function getSelectedRegistrationFee() {
+    var regfeeddl = document.getElementById("registrationfee");
+    selectedRegFee = regfeeddl.options[regfeeddl.selectedIndex].value;
+    var selectedRegFeeSplit = selectedRegFee.split(" ");
+    var conregfee = '';
+    for (i = 0; i < selectedRegFeeSplit.length - 1; i++) {
+        conregfee = conregfee + selectedRegFeeSplit[i] + " ";
+    }
+    regfeeobject = { "name": conregfee, "amount": parseInt(selectedRegFeeSplit[selectedRegFeeSplit.length - 1] + 0.0) };
+
 }
 
 function WhichDivToHide() {
@@ -79,7 +115,8 @@ function hideAllFirst() {
 
 function HiddingDiv(data) {
     var statuscode = data['statusCode'];
-    conferenceCode = data[conferenceCode];
+    conferenceCode = data['conferenceCode'];
+    configureRegistrationDropDown(data);
     if (statuscode == -1) {
         var x = document.getElementById("registrationonline");
         var y = document.getElementById("registrationnotstarted");
@@ -114,4 +151,18 @@ function ChooseFile() {
     var chooseFileButton = document.getElementById("choose_file_button");
     chooseFileButton.setAttribute("type", "file");
     document.body.appendChild(x);
+}
+
+function configureRegistrationDropDown(data) {
+    var regddl = document.getElementById("registrationfee");
+    for (i = 0; i < data.fees.length; i++) {
+        var feeObj = data.fees[i];
+        var regNameString = feeObj["name"];
+        var regFeeInt = feeObj["amount"];
+        var conregoption = regNameString + " " + regFeeInt;
+        var option = document.createElement("option");
+        option.text = conregoption;
+        option.value = conregoption;
+        regddl.add(option);
+    }
 }
