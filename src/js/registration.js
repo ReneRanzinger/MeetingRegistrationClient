@@ -16,13 +16,13 @@ function RegistrationSuccess() {
     var first_name = $("#first_name").val();
     var middle_name = $("#middle_name").val();
     var last_name = $("#last_name").val();
-    var phone_num = $("#phone_num");
+    var phone_num = $("#phone_num").val();
     var email = $("#email").val();
     var re_enter_email = $("#re_enter_email").val();
-    var address = $("#address");
-    var profession = $("#profession");
+    var address = $("#address").val();
+    var profession = $("#profession").val();
     var registration_fee = regfeeobject;
-    var promo_code = $("#promo_code")
+    var promo_code = $("#promo_code").val();
     var department = $("#department").val();
     var organization = $("#organization").val();
     var organization_type = orgtypeselected;
@@ -42,15 +42,19 @@ function RegistrationSuccess() {
         phone: phone_num,
         profession: profession,
         promotionCode: promo_code,
-        fee: [regfeeobject],
+        fee: regfeeobject,
         comment: comments,
         diet: diet
     };
     $.ajax({
         type: 'post',
         url: "http://localhost:8080/registration/register",
-        dataType: 'application/json',
+        // dataType: 'application/json',
         data: JSON.stringify(form_object),
+        headers: { 
+            'Accept': 'application/json', 
+            'Content-Type': 'application/json' 
+        },
         success: function(results) {
             alert('sucess');
         },
