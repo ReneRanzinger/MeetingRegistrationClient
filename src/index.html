@@ -5,14 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <title>SFG - GlycoBioInformatics satellite registration </title>
-    <!--link href="css/bootstrap.css" rel="stylesheet"-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="js/registration.js">
-    </script>
 
-    <body onload="hideAllFirst();WhichDivToHide()">
+    <!--link href="css/bootstrap.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+    <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
+
+    <body onload="WhichDivToHide()">
         <div class="container-fluid overallcontainer" id="registrationonline">
             <div class="container-fluid registrationPadding registrationTitleStyle">
                 SFG - GlycoBioInformatics satellite registration
@@ -37,7 +40,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="registration_fee" style="text-align: left;">Title:</label>
                         <div class=" control-label col-sm-10">
-                            <select class=" form-control " id="title">
+                            <select class=" form-control " id="title" required>
                         <option>Prof.</option>
                         <option>Dr.</option>
                         <option>Mr.</option>
@@ -50,37 +53,55 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="first_name" style="text-align: left;">First Name:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="first_name" placeholder="Enter First Name">
+                            <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="middle_name" style="text-align: left;">Middle Name:</label>
                         <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="middle_name" placeholder="Enter Middle Name ">
+                            <input type="text" class="form-control " id="middle_name" placeholder="Enter Middle Name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="last_name" style="text-align: left;">Last Name:</label>
                         <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="last_name" placeholder="Enter Last Name">
+                            <input type="text" class="form-control " id="last_name" placeholder="Enter Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="profession" style="text-align: left;">Profession:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="text" class="form-control " id="profession" placeholder="Enter Profession" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="department" style="text-align: left;">Department:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="text" class="form-control " id="department" placeholder="Enter Department" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="organization" style="text-align: left;">Institution:</label>
+                        <div class=" col-sm-10 ">
+                            <input type="text" class="form-control " id="organization" placeholder="Enter Institution Name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="phone" style="text-align: left;">Phone:</label>
                         <div class=" col-sm-10 ">
-                            <input type="number" class="form-control " id="phone_num" placeholder="Enter Phone Number">
+                            <input type="number" class="form-control " id="phone_num" placeholder="Enter Phone Number" required>
                         </div>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label col-sm-2 " for="email " style="text-align: left; ">Email:</label>
+                        <label class="control-label col-sm-2 " for="email" style="text-align: left; ">Email:</label>
                         <div class=" col-sm-10 ">
-                            <input type="email" class="form-control " id="email " placeholder="Enter Email ">
+                            <input type="email" class="form-control " id="email" placeholder="Enter Email" required>
                         </div>
                     </div>
                     <div class="form-group ">
                         <label class="control-label col-sm-2 " for="reenter_email " style="text-align: left; ">Re-enter Email:</label>
                         <div class=" col-sm-10 ">
-                            <input type="email" class="form-control " id="re_enter_email " placeholder="Re-enter Email ">
+                            <input type="email" class="form-control " id="re_enter_email " placeholder="Re-enter Email " required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -90,65 +111,50 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="profession" style="text-align: left;">Profession:</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="profession" placeholder="Enter Profession">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="registration_fee" style="text-align: left;">Registration Fee:</label>
-                        <div class=" control-label col-sm-10">
-                            <select class=" form-control " id="registrationfee">
-                        </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         <label class="control-label col-sm-2" for="promocode" style="text-align: left;">Promo Code:</label>
                         <div class=" col-sm-10 ">
                             <input type="text" class="form-control " id="promo_code" placeholder="Enter promo code">
                         </div>
-                    </div>
+                    </div>                    
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="department" style="text-align: left;">Department:</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="department" placeholder="Enter Department">
+                        <label class="control-label col-sm-2" for="registration_fee" style="text-align: left;">Registration Fee:</label>
+                        <div class=" control-label col-sm-10">
+                            <select class="form-control " id="registrationfee" required>
+                        </select>
                         </div>
                     </div>
+              
+                    
+                    <!--
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="organization" style="text-align: left;">Organization:</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="organization" placeholder="Enter Organization">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="organizationtype" style="text-align: left;">Organization Type:</label>
+                        <label class="control-label col-sm-2" for="organizationtype" style="text-align: left;">Institution Type:</label>
                         <div class=" control-label col-sm-10">
                             <select class=" form-control " id="organizationtype">
                         <option>Academic</option>
                         <option>Nonprofit</option>
                         <option>Industrial</option>
                         <option>Government</option>
+                        <option>Other</option>
                         </select>
                         </div>
                     </div>
-
+                    -->
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="diet" style="text-align: left;">Diet:</label>
                         <div class=" control-label col-sm-10">
                             <select class=" form-control " id="diet">
                         <option>Vegan</option>
                         <option>Vegetarian</option>
-                        <option>Non Vegetarianl</option>
+                        <option>Non Vegetarian</option>
                         <option>Other</option>
                         </select>
                         </div>
                     </div>
 
                     <div class="form-group ">
-                        <label class="control-label col-sm-2 " for="comments " style="text-align: left; ">Comments:</label>
+                        <label class="control-label col-sm-2 " for="comments" style="text-align: left; ">Comments:</label>
                         <div class=" col-sm-10 ">
-                            <textarea class="form-control " id="comments " rows="3 "></textarea>
+                            <textarea class="form-control " id="comments" rows="3 "></textarea>
                         </div>
                     </div>
 
@@ -185,10 +191,11 @@
 
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+    <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/registration.js"></script>
     <!--Script for jquery-->
     <script type="text/javascript" src="libraries/jquery/jquery-3.1.js"></script>
-    <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
+    
 </head>
 
 </html>

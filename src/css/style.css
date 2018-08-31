@@ -1,64 +1,66 @@
-                            .registrationPadding {
-                                padding-left: 40px;
-                                padding-right: 40px;
-                                padding-top: 20px;
-                                width: 70%;
-                            }
-                            
-                            .registrationLabel {
-                                text-align: left;
-                            }
-                            
-                            .overallcontainer {
-                                margin-top: 10px;
-                                width: 70%;
-                                border-radius: 5px;
-                                background-color: #ebe9e9;
-                                margin-bottom: 10px;
-                            }
-                            
-                            .registrationContainer {
-                                width: 100%;
-                                border-radius: 5px;
-                                background-color: #ebe9e9;
-                                padding-left: 40px;
-                                padding-right: 40px;
-                                padding-top: 20px;
-                            }
-                            
-                            .registrationTitleStyle {
-                                width: 100%;
-                                border-radius: 5px;
-                                background-color: #ebe9e9;
-                                font-size: 40px;
-                                margin-top: 10px;
-                                padding-bottom: 10px;
-                                color: #a70505;
-                            }
-                            
-                            .registrationInfoContainer {
-                                width: 100%;
-                                border-radius: 5px;
-                                background-color: #ebe9e9;
-                                padding-left: 40px;
-                                padding-right: 40px;
-                                padding-top: 10px;
-                                padding-bottom: 5px;
-                            }
-                            
-                            .infoText {
-                                font-size: 16px;
-                            }
-                            
-                            .labelPadding {
-                                padding-left: 10px;
-                            }
-                            
-                            .ulpadding {
-                                padding-left: 15px;
-                                padding-top: 2px;
-                            }
-                            
-                            .hidden {
-                                display: none !important;
-                            }
+.registrationPadding {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    width: 70%;
+}
+
+.registrationLabel {
+    text-align: left;
+}
+
+.overallcontainer {
+    margin-top: 10px;
+    width: 70%;
+    border-radius: 5px;
+    background-color: #ebe9e9;
+    margin-bottom: 10px;
+    display:none;
+}
+
+.registrationContainer {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ebe9e9;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+   
+}
+
+.registrationTitleStyle {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ebe9e9;
+    font-size: 40px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    color: #a70505;
+}
+
+.registrationInfoContainer {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ebe9e9;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.infoText {
+    font-size: 16px;
+}
+
+.labelPadding {
+    padding-left: 10px;
+}
+
+.ulpadding {
+    padding-left: 15px;
+    padding-top: 2px;
+}
+
+.hidden {
+    display: none !important;
+}
