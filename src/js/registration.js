@@ -77,15 +77,13 @@ function RegistrationSuccess() {
 function WhichDivToHide() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/conference/info/A02",
+        url: "http://glycomics.ccrc.uga.edu/api/conference/info/A01/A001",
         dataType: "json",
         success: function(data) {
             HiddingDiv(data);
         },
         error: function(response) {
-           // hideAllFirst();
             console.log(response);
-            alert('fail');
         }
     });
 }
@@ -93,18 +91,16 @@ function WhichDivToHide() {
 
 
 function HiddingDiv(data) {
-    var statuscode =0; //data['statusCode'];
+    var statuscode = data['statusCode'];
     conferenceCode = data['conferenceCode'];
-    configureRegistrationDropDown(data);
     if (statuscode == -1) {
         var z = document.getElementById("registrationover");
         z.style.display = "block";
-    }
-    if (statuscode == 0) {
+    } else if (statuscode == 0) {
         var z = document.getElementById("registrationonline");
         z.style.display = "block";
-    }
-    if (statuscode == 1) {
+        configureRegistrationDropDown(data);
+    } else if (statuscode == 1) {
         var z = document.getElementById("registrationnotstarted");
         z.style.display = "block";
     }
