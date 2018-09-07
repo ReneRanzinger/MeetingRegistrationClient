@@ -49,10 +49,10 @@ function RegistrationSuccess() {
         comment: comments,
         diet: diet
     };
-    debugger;
+    
     $.ajax({
         type: 'post',
-        url: "http://localhost:8080/registration/register",
+        url: getWsUrl("register"),
         // dataType: 'application/json',
         data: JSON.stringify(form_object),
         headers: { 
@@ -67,54 +67,4 @@ function RegistrationSuccess() {
             alert('fail')
         }
     });
-}
-
-// function getselectedorgtypevalue() {
-//     var orgtypeddl = document.getElementById("organizationtype");
-//     orgtypeselected = orgtypeddl.options[orgtypeddl.selectedIndex].value;
-// }
-
-function WhichDivToHide() {
-    $.ajax({
-        type: "GET",
-        url: "http://glycomics.ccrc.uga.edu/api/conference/info/A01/A001",
-        dataType: "json",
-        success: function(data) {
-            HiddingDiv(data);
-        },
-        error: function(response) {
-            console.log(response);
-        }
-    });
-}
-
-
-
-function HiddingDiv(data) {
-    var statuscode = data['statusCode'];
-    conferenceCode = data['conferenceCode'];
-    if (statuscode == -1) {
-        var z = document.getElementById("registrationover");
-        z.style.display = "block";
-    } else if (statuscode == 0) {
-        var z = document.getElementById("registrationonline");
-        z.style.display = "block";
-        configureRegistrationDropDown(data);
-    } else if (statuscode == 1) {
-        var z = document.getElementById("registrationnotstarted");
-        z.style.display = "block";
-    }
-}
-
-function configureRegistrationDropDown(data) {
-    var fee_ddl = document.getElementById("registrationfee");
-    for (i = 0; i < data.fees.length; i++) {
-        var feeObj = data.fees[i];
-        var regNameString = feeObj["name"];
-        var regFeeInt = feeObj["amount"]; 
-        var option = document.createElement("option");
-        option.text = regNameString + " - $" + regFeeInt;;
-        option.value = regNameString + " " + regFeeInt;
-        fee_ddl.add(option);
-    }
 }
