@@ -1,7 +1,7 @@
 function WhichDivToHide() {
     $.ajax({
         type: "GET",
-        url: getWsUrl("info","A02"),
+        url: getWsUrl("info","XABKSHRKZU"),
     //    url: getWsUrl("post_reg","A01","A001"),
         dataType: "json",
         success: function(data) {
@@ -41,7 +41,7 @@ function configureRegistrationDropDown(data) {
         var regNameString = feeObj["name"];
         var regFeeInt = feeObj["amount"]; 
         var option = document.createElement("option");
-        option.text = regNameString + " - $" + regFeeInt;;
+        option.text = regNameString + " - $" + regFeeInt + ".0";
         option.value = regNameString + " " + regFeeInt;
         fee_ddl.add(option);
     }

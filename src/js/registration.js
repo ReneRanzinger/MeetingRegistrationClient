@@ -19,8 +19,9 @@ function RegistrationSuccess() {
     var department = $("#department").val();
     var organization = $("#organization").val();
     //var organization_type = orgtypeselected;
-    var diet_ddl = document.getElementById("diet");
-    var diet = diet_ddl.options[diet_ddl.selectedIndex].value;
+    // var diet_ddl = document.getElementById("diet");
+    // var diet = diet_ddl.options[diet_ddl.selectedIndex].value;
+    var diet = "";
     var comments = $("#comments").val();
 
     var selectedFee_ddl = document.getElementById("registrationfee");
@@ -60,11 +61,20 @@ function RegistrationSuccess() {
             'Content-Type': 'application/json' 
         },
         success: function(results) {
-            alert('sucess');
+            var z = document.getElementById("registrationonline");
+            z.style.display = "none";
+            var x = document.getElementById("registrationStatusDisplay");
+            $('.responseStatus').html("Confirmation email has been sent. Please check your email.");
+            var responseMessage = results['message'];
+            responseMessage = responseMessage.replace(/(\n)/g, '<br>');
+            $('.responseString').html(responseMessage);
+            x.style.display = "block";
+          //  window.location='./confirmation.html';
         },
         error: function(response) {
             console.log(response);
-            alert('fail')
+            alert('Something went wrong! Please try again later.');
+
         }
     });
 }

@@ -15,7 +15,7 @@
     border-radius: 5px;
     background-color: #ebe9e9;
     margin-bottom: 10px;
-    display:none;
+    display:none; 
 }
 
 .registrationContainer {
@@ -34,7 +34,7 @@
     background-color: #ebe9e9;
     font-size: 40px;
     margin-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     color: #a70505;
 }
 

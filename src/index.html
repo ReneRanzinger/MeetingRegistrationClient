@@ -23,15 +23,22 @@
 
 
             <div class="container-fluid registrationInfoContainer infoText">
-                The GlycoBioInformatics satellite meeting aims to introduce researchers to software tools and database that can assist them in their day to day work. These tools and databases can be used as information systems or for the processing and interpretation
-                of experimental data.
-                <p> In this satellite software and database providers will introduce attendees to their tools and how they can be used. During the first half of the meeting the tools and databases will be presented in short talks followed by the opportunity
-                    to asked questions. After a short break the software and database providers live demonstrate their tools to interested individuals. The participation in the satellite is free of charge - please register anyway since this will allow
-                    us to plan the meeting better.
+                <h4><b><a href="http://glycomics.ccrc.uga.edu/meetings/sfg/GlycoInformaticsSatelliteProgram.pdf" target="_blank">Meeting Program</a></b></h4>
+                <br>
+                <p>
+                    The GlycoBioInformatics satellite meeting aims to introduce researchers to software tools and database that can assist them in their day to day work. 
+                    These tools and databases can be used as information systems or for the processing and interpretation of experimental data. 
+                </p>
+                
+                <p> 
+                    In this satellite software and database providers will introduce attendees to their tools and how they can be used. 
+                    During the first part of the meeting the tools and databases will be presented in short talks followed by the opportunity to asked questions. 
+                    In the afternoon the software and database providers will demonstrate their tools to interested individuals. 
+                    The participation in the satellite is free of charge - please register anyway since this will allow us to plan the meeting better.
                 </p>
                 <p>
                     <span style="font-weight: bold;color:#a70505;">Please note:</span> Registration for the satellite meeting on this page allows to attend the satellite only. If you plan to participate in the SFG meeting as well please use the
-                    <a href="http://www.glycobiology.org/registration.php">main registration page</a> to sign up for the main meeting.
+                    <a href="http://glycobiology.org/Meetings/Registration.aspx" target="_blank">main registration page</a> to sign up for the main meeting.
                 </p>
 
             </div>
@@ -89,12 +96,7 @@
                             <input type="text" class="form-control " id="organization" placeholder="Enter Institution Name" required="required">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="phone" style="text-align: left;">Phone *</label>
-                        <div class=" col-sm-10 ">
-                            <input type="number" class="form-control " id="phone_num" placeholder="Enter Phone Number" required="required">
-                        </div>
-                    </div>
+                    
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email" style="text-align: left;">Email *</label>
                         <div class="col-sm-10">
@@ -107,6 +109,12 @@
                             <input type="email" class="form-control" id="re_enter_email" placeholder="Re-enter Email" required="required">
                         </div>
                     </div>
+                    <div class="form-group">
+                            <label class="control-label col-sm-2" for="phone" style="text-align: left;">Phone</label>
+                            <div class=" col-sm-10 ">
+                                <input type="text" class="form-control " id="phone_num" placeholder="Enter Phone Number">
+                            </div>
+                        </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="address" style="text-align: left;">Address</label>
                         <div class=" col-sm-10 ">
@@ -142,19 +150,19 @@
                         </div>
                     </div>
                     -->
-
+                    <!--
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="diet" style="text-align: left;">Diet</label>
                         <div class=" control-label col-sm-10">
                             <select class=" form-control " id="diet">
+                        <option>No Restriction</option>
                         <option>Vegan</option>
                         <option>Vegetarian</option>
                         <option>Non Vegetarian</option>
-                        <option>Other</option>
                         </select>
                         </div>
                     </div>
-
+                    -->
                     <div class="form-group ">
                         <label class="control-label col-sm-2 " for="comments" style="text-align: left; ">Comments</label>
                         <div class=" col-sm-10 ">
@@ -173,23 +181,32 @@
 
         <div class="container-fluid overallcontainer" id="registrationnotstarted">
             <div class="container-fluid registrationInfoContainer infoText" id="registrationnotstarted1">
-                <span style="font-weight: bold;color:#a70505;">Please note:</span><br> Registration runs <label class="regStart"></label> through <label class="regEnd"></label>. A registration fee of $60 ($30 for postdocs and students) will be assessed at the time of registration.
-                In case of problems or questions please contact our event manager <b>Cathryn Quinn</b> (cjquinn@uga.edu).
+                <span style="font-weight: bold;color:#a70505;">Please note:</span><br> Registration runs <label class="regStart"></label> through <label class="regEnd"></label>.
+                In case of problems or questions please contact our event manager <b>René Ranzinger</b> (rene@ccrc.uga.edu).
             </div>
         </div>
 
         <div class="container-fluid overallcontainer" id="registrationover">
             <div class="container-fluid registrationInfoContainer infoText" id="registrationover1">
                 The registration was closed on <label class="regEnd"></label>. In case of problems or questions please contact our event manager
-                <b>Cathryn Quinn</b> (cjquinn@uga.edu).
+                <b>René Ranzinger</b> (rene@ccrc.uga.edu).
                 <p>
-                    <span style="font-weight: bold;color:#a70505;">Please note:</span> Registration for the satellite meeting on this page allows to attend the satellite only. If you plan to participate in the SFG meeting as well please use the
-                    <a href="http://www.glycobiology.org/registration.php">main registration page</a> to sign up for the main meeting.
+                        <span style="font-weight: bold;color:#a70505;">Please note:</span> Registration for the satellite meeting on this page allows to attend the satellite only. If you plan to participate in the SFG meeting as well please use the
+                        <a href="http://glycobiology.org/Meetings/Registration.aspx" target="_blank">main registration page</a> to sign up for the main meeting.
                 </p>
 
             </div>
         </div>
 
+        <div class="container-fluid overallcontainer" id = "registrationStatusDisplay">
+                <div class="container-fluid registrationPadding registrationTitleStyle">
+                            SFG - GlycoBioInformatics satellite registration
+                </div>
+                <div class="container-fluid registrationInfoContainer infoText">
+                    <p><label class="responseStatus"></label></p>
+                    <p><label class="responseString"></label></p>
+                </div>
+        </div>
 
 
 
