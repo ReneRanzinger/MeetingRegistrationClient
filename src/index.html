@@ -13,6 +13,8 @@
 
     <!--link href="css/bootstrap.css" rel="stylesheet"-->
     <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+    <!-- <link type="text/css " rel="stylesheet " media="all " href="css/style.css "> -->
+    <link rel="stylesheet" type="text/css" href="libraries/alertifyjs/css/alertify.css">
     <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
 
     <body onload="WhichDivToHide()">
@@ -29,7 +31,6 @@
                     The GlycoBioInformatics satellite meeting aims to introduce researchers to software tools and database that can assist them in their day to day work. 
                     These tools and databases can be used as information systems or for the processing and interpretation of experimental data. 
                 </p>
-                
                 <p> 
                     In this satellite software and database providers will introduce attendees to their tools and how they can be used. 
                     During the first part of the meeting the tools and databases will be presented in short talks followed by the opportunity to asked questions. 
@@ -46,133 +47,144 @@
                 <div class="row">
                     <p class="text-muted pull-right"><strong>*</strong> These fields are required.</p>
                 </div>
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="title" style="text-align: left;">Title *</label>
-                        <div class=" control-label col-sm-10">
-                            <select class="form-control" id="title" required="required">
-                        <option>Prof.</option>
-                        <option>Dr.</option>
-                        <option>Mr.</option>
-                        <option>Mrs.</option>
-                        <option>Miss.</option>
-                        </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="first_name" style="text-align: left;">First Name *</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="middle_name" style="text-align: left;">Middle Name</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="middle_name" placeholder="Enter Middle Name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="last_name" style="text-align: left;">Last Name *</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="last_name" placeholder="Enter Last Name" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="profession" style="text-align: left;">Profession *</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="profession" placeholder="Enter Profession" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="department" style="text-align: left;">Department *</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="department" placeholder="Enter Department" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="organization" style="text-align: left;">Institution *</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="organization" placeholder="Enter Institution Name" required="required">
-                        </div>
-                    </div>
+                <form class="form-horizontal" id="registration-form">
                     
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email" style="text-align: left;">Email *</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control " id="email" placeholder="Enter Email" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label col-sm-2" for="reenter_email" style="text-align: left;">Re-enter Email *</label>
-                        <div class=" col-sm-10 ">
-                            <input type="email" class="form-control" id="re_enter_email" placeholder="Re-enter Email" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                            <label class="control-label col-sm-2" for="phone" style="text-align: left;">Phone</label>
-                            <div class=" col-sm-10 ">
-                                <input type="text" class="form-control " id="phone_num" placeholder="Enter Phone Number">
+                    <div class="messages" id="error-messages-box"></div>
+                    <div class="controls">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="title" style="text-align: left;">Title *</label>
+                            <div class=" control-label col-sm-10">
+                                <select class="form-control" id="title" required="required">
+                            <option>Prof.</option>
+                            <option>Dr.</option>
+                            <option>Mr.</option>
+                            <option>Mrs.</option>
+                            <option>Miss.</option>
+                            </select>
                             </div>
                         </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="address" style="text-align: left;">Address</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="address" placeholder="Enter Address">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="promocode" style="text-align: left;">Promo Code</label>
-                        <div class=" col-sm-10 ">
-                            <input type="text" class="form-control " id="promo_code" placeholder="Enter promo code">
-                        </div>
-                    </div>                    
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="registration_fee" style="text-align: left;">Registration Fee *</label>
-                        <div class=" control-label col-sm-10">
-                            <select class="form-control " id="registrationfee" required="required">
-                        </select>
-                        </div>
-                    </div>
-              
-                    
-                    <!--
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="organizationtype" style="text-align: left;">Institution Type:</label>
-                        <div class=" control-label col-sm-10">
-                            <select class=" form-control " id="organizationtype">
-                        <option>Academic</option>
-                        <option>Nonprofit</option>
-                        <option>Industrial</option>
-                        <option>Government</option>
-                        <option>Other</option>
-                        </select>
-                        </div>
-                    </div>
-                    -->
-                    <!--
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="diet" style="text-align: left;">Diet</label>
-                        <div class=" control-label col-sm-10">
-                            <select class=" form-control " id="diet">
-                        <option>No Restriction</option>
-                        <option>Vegan</option>
-                        <option>Vegetarian</option>
-                        <option>Non Vegetarian</option>
-                        </select>
-                        </div>
-                    </div>
-                    -->
-                    <div class="form-group ">
-                        <label class="control-label col-sm-2 " for="comments" style="text-align: left; ">Comments</label>
-                        <div class=" col-sm-10 ">
-                            <textarea class="form-control " id="comments" rows="3 "></textarea>
-                        </div>
-                    </div>
 
-                    <div class="form-group ">
-                        <div class="col-sm-offset-2 col-sm-10 ">
-                            <button type="button" class="btn btn-default " onclick="RegistrationSuccess()">Register</button>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="first_name" style="text-align: left;">First Name *</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" required="required" maxlength="125" data-error="Firstname is required." >
+                            </div>
+                            <div class="help-block with-errors error-text-padding"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="middle_name" style="text-align: left;">Middle Name</label>
+                            <div class=" col-sm-10 ">
+                                <input type="text" class="form-control " id="middle_name" maxlength="125" placeholder="Enter Middle Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="last_name" style="text-align: left;">Last Name *</label>
+                            <div class=" col-sm-10 ">
+                                <input type="text" class="form-control " id="last_name" placeholder="Enter Last Name" required="required" maxlength="125" data-error="Lastname is required.">
+                            </div>
+                            <div class="help-block with-errors error-text-padding"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="profession" style="text-align: left;">Profession *</label>
+                            <div class=" col-sm-10 ">
+                                <input type="text" class="form-control " id="profession" placeholder="Enter Profession" required="required" maxlength="125" data-error="Profession is required.">
+                            </div>
+                            <div class="help-block with-errors error-text-padding"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="department" style="text-align: left;">Department *</label>
+                            <div class=" col-sm-10 ">
+                                <input type="text" class="form-control " id="department" placeholder="Enter Department" required="required" maxlength="125" data-error="Department name is required.">
+                            </div>
+                            <div class="help-block with-errors error-text-padding"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="organization" style="text-align: left;">Institution *</label>
+                            <div class=" col-sm-10 ">
+                                <input type="text" class="form-control " id="organization" placeholder="Enter Institution Name" required="required" maxlength="256" data-error="Institution name is required.">
+                            </div>
+                            <div class="help-block with-errors error-text-padding"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email" style="text-align: left;">Email *</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control " id="email" placeholder="Enter Email" required="required" maxlength="125" data-error="The input is not a valid email address.">
+                            </div>
+                            <div class="help-block with-errors error-text-padding"></div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label col-sm-2" for="reenter_email" style="text-align: left;">Re-enter Email *</label>
+                            <div class=" col-sm-10 ">
+                                <input type="email" class="form-control" id="re_enter_email" placeholder="Re-enter Email" required="required" maxlength="125" data-match="#email" data-error="Enter the same email address as above.">
+                            </div>
+                            <div class="help-block with-errors error-text-padding"></div>
+                        </div>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2" for="phone" style="text-align: left;">Phone</label>
+                                <div class=" col-sm-10 ">
+                                    <input type="text" class="form-control " id="phone_num" maxlength="125" placeholder="Enter Phone Number">
+                                </div>
+                            </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="address" style="text-align: left;">Address</label>
+                            <div class=" col-sm-10 ">
+                                <input type="text" class="form-control " id="address" placeholder="Enter Address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="promocode" style="text-align: left;">Promo Code</label>
+                            <div class=" col-sm-10 ">
+                                <input type="text" class="form-control " id="promo_code" placeholder="Enter promo code" maxlength="30">
+                            </div>
+                        </div>                    
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="registration_fee" style="text-align: left;">Registration Fee *</label>
+                            <div class=" control-label col-sm-10">
+                                <select class="form-control " id="registrationfee" required="required">
+                            </select>
+                            </div>
+                        </div>
+                
+                        
+                        <!--
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="organizationtype" style="text-align: left;">Institution Type:</label>
+                            <div class=" control-label col-sm-10">
+                                <select class=" form-control " id="organizationtype">
+                            <option>Academic</option>
+                            <option>Nonprofit</option>
+                            <option>Industrial</option>
+                            <option>Government</option>
+                            <option>Other</option>
+                            </select>
+                            </div>
+                        </div>
+                        -->
+                        <!--
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="diet" style="text-align: left;">Diet</label>
+                            <div class=" control-label col-sm-10">
+                                <select class=" form-control " id="diet">
+                            <option>No Restriction</option>
+                            <option>Vegan</option>
+                            <option>Vegetarian</option>
+                            <option>Non Vegetarian</option>
+                            </select>
+                            </div>
+                        </div>
+                        -->
+                        <div class="form-group ">
+                            <label class="control-label col-sm-2 " for="comments" style="text-align: left; ">Comments</label>
+                            <div class=" col-sm-10 ">
+                                <textarea class="form-control " id="comments" rows="3 "></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class="col-sm-offset-2 col-sm-10 ">
+                                <input type="submit" class="btn btn-default" value="Register">
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -180,45 +192,42 @@
         </div>
 
         <div class="container-fluid overallcontainer" id="registrationnotstarted">
+            <div class="container-fluid registrationPadding registrationTitleStyle">
+                        SFG - GlycoBioInformatics satellite registration
+            </div>
             <div class="container-fluid registrationInfoContainer infoText" id="registrationnotstarted1">
                 <span style="font-weight: bold;color:#a70505;">Please note:</span><br> Registration runs <label class="regStart"></label> through <label class="regEnd"></label>.
                 In case of problems or questions please contact our event manager <b>René Ranzinger</b> (rene@ccrc.uga.edu).
             </div>
+            <br/>
         </div>
 
         <div class="container-fluid overallcontainer" id="registrationover">
+            <div class="container-fluid registrationPadding registrationTitleStyle">
+                 SFG - GlycoBioInformatics satellite registration
+            </div>
             <div class="container-fluid registrationInfoContainer infoText" id="registrationover1">
-                The registration was closed on <label class="regEnd"></label>. In case of problems or questions please contact our event manager
-                <b>René Ranzinger</b> (rene@ccrc.uga.edu).
+                <div>
+                    The registration was closed on <label class="regEnd"></label>. In case of problems or questions please contact our event manager
+                    <b>René Ranzinger</b> (rene@ccrc.uga.edu).
+                </div>
                 <p>
                         <span style="font-weight: bold;color:#a70505;">Please note:</span> Registration for the satellite meeting on this page allows to attend the satellite only. If you plan to participate in the SFG meeting as well please use the
                         <a href="http://glycobiology.org/Meetings/Registration.aspx" target="_blank">main registration page</a> to sign up for the main meeting.
                 </p>
-
+                <br/>
             </div>
         </div>
 
-        <div class="container-fluid overallcontainer" id = "registrationStatusDisplay">
-                <div class="container-fluid registrationPadding registrationTitleStyle">
-                            SFG - GlycoBioInformatics satellite registration
-                </div>
-                <div class="container-fluid registrationInfoContainer infoText">
-                    <p><label class="responseStatus"></label></p>
-                    <p><label class="responseString"></label></p>
-                </div>
-        </div>
-
-
 
     </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
-    <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libraries/jquery/jquery-3.1.js"></script>
+    <script type="text/javascript" src="libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libraries/alertifyjs/alertify.js"></script>
+    <script type="text/javascript" src="js/conference_status.js"></script>
+    <script type="text/javascript" src="libraries/validator.js"></script>
     <script type="text/javascript" src="js/registration.js"></script>
     <script type="text/javascript" src="js/ws_url.js"></script>
-    <script type="text/javascript" src="js/conference_status.js"></script>
-    <!--Script for jquery-->
-    <script type="text/javascript" src="libraries/jquery/jquery-3.1.js"></script>
-    
 </head>
 
 </html>

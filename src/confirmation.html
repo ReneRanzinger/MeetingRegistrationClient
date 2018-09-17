@@ -15,21 +15,22 @@
     <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
     <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
 
-    <body>
+    <body onload="PopulateData()">
         <div class="container-fluid overallcontainer" id = "registrationStatusDisplay">
             <div class="container-fluid registrationPadding registrationTitleStyle">
                         SFG - GlycoBioInformatics satellite registration
             </div>
-            <div class="container-fluid registrationInfoContainer infoText">
-                <p><label class="responseStatus"></label></p>
-                <p><label class="responseString"></label></p>
+            <div class="container-fluid registrationInfoContainer">
+                <p><span class="responseStatus" style="font-weight:bold"></span></p>
+                <p><span class="responseString"></span></p>
             </div>
+            <br/>
         </div>
 
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
     <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/registration.js"></script>
+    <script type="text/javascript" src="js/confirmation.js"></script>
     <script type="text/javascript" src="js/ws_url.js"></script>
    
     <!--Script for jquery-->

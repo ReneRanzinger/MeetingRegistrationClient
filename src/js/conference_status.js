@@ -1,3 +1,5 @@
+var conferenceCode;
+
 function WhichDivToHide() {
     $.ajax({
         type: "GET",
@@ -9,6 +11,21 @@ function WhichDivToHide() {
         },
         error: function(response) {
             console.log(response);
+            if(response.status == 404){
+                alertify.alert()
+                    .setting({
+                        'title': 'Conference Not Found',
+                        'label':'OK',
+                        'message': 'Could not find the Registration page for conference. Please use the correct URL or Contact Organizers.'
+                    }).show();
+            }else {
+                alertify.alert()
+                    .setting({
+                        'title': 'Server Down',
+                        'label':'OK',
+                        'message': 'OOPS!! Something went wrong! Please try again later or Contact Organizers.'
+                    }).show();
+            }
         }
     });
 }

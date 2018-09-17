@@ -64,3 +64,22 @@
 .hidden {
     display: none !important;
 }
+
+.error-text-padding {
+    padding-left: 143px;
+    padding-top: 40px;
+    margin:0px;
+}
+
+/* //test */
+
+.alertify .ajs-header {
+    background-color: #696969;
+    color: #ebe9e9;
+    font-size: 20px;
+}
+
+.alertify .ajs-button {
+    background-color: #696969;
+    color: #ebe9e9;
+}
