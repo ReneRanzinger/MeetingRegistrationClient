@@ -67,7 +67,6 @@ $(function () {
                 },
                 success: function(results) {
                     var responseMessage = results['message'];
-                    responseMessage = responseMessage.replace(/(\n)/g, '<br>');
                     sessionStorage.setItem("responseMessage", responseMessage);
                     window.location='./confirmation.html';
                     $('#loading_image').fadeOut();             
