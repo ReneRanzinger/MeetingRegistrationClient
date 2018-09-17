@@ -49,6 +49,7 @@ function HiddingDiv(data) {
         $('.regEnd').html(data['registrationEnd']);
         z.style.display = "block";
     }
+    $('#loading_image').fadeOut();
 }
 
 function configureRegistrationDropDown(data) {

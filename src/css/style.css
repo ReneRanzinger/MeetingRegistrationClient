@@ -83,3 +83,23 @@
     background-color: #696969;
     color: #ebe9e9;
 }
+
+#loading_image{
+    background: rgba( 255, 255, 255, 0.85 );
+    display: block;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    align-content: center;
+}
+#loading_image img{
+    display: block;
+    /* left: 45%; */
+    margin-left: auto;
+    margin-right: auto;
+    /* position: absolute; */
+    width: 5%;
+    height: auto;
+    padding-top: 30vh;
+}

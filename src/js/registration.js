@@ -4,8 +4,11 @@ $(function () {
 
     $('#registration-form').on('submit', function (e) {
 
+        // displays the loading gif when the ajax call starts
+        $('#loading_image').fadeIn();
+
         if(!e.isDefaultPrevented()){
-            
+
             e.preventDefault();
 
             var title_ddl = document.getElementById("title");    
@@ -66,7 +69,8 @@ $(function () {
                     var responseMessage = results['message'];
                     responseMessage = responseMessage.replace(/(\n)/g, '<br>');
                     sessionStorage.setItem("responseMessage", responseMessage);
-                    window.location='./confirmation.html';              
+                    window.location='./confirmation.html';
+                    $('#loading_image').fadeOut();             
                 },
                 error: function(response) {
                     console.log(response);
@@ -80,7 +84,9 @@ $(function () {
                         $('#registration-form').find('.messages').html(alertBox);
                         var messagebox = document.getElementById("error-messages-box");
                         messagebox.scrollIntoView();
+                        $('#loading_image').fadeOut();
                     }else{
+                        $('#loading_image').fadeOut();
                         alertify.alert()
                         .setting({
                             'title': 'Registration Failed',
