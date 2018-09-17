@@ -26,6 +26,7 @@ function WhichDivToHide() {
                         'message': 'OOPS!! Something went wrong! Please try again later or Contact Organizers.'
                     }).show();
             }
+            $('#loading_image').fadeOut();
         }
     });
 }
