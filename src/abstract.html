@@ -5,20 +5,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <title>SFG - GlycoBioInformatics Abstract Submission </title>
     <!--link href="css/bootstrap.css" rel="stylesheet"-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <!--link href="css/bootstrap.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+    <!-- <link type="text/css " rel="stylesheet " media="all " href="css/style.css "> -->
+    <link rel="stylesheet" type="text/css" href="libraries/alertifyjs/css/alertify.css">
+    <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
     <body>
-        <div class="container-fluid overallcontainer" id="abstractlinetitle">
+        <div class="container-fluid overallcontainer" id="abstract_online">
             <div class="container-fluid registrationPadding registrationTitleStyle">
-                SFG - GlycoBioInformatics satellite registration
+                SFG - GlycoBioInformatics abstract submission
             </div>
-        </div>
-
-        <div class="container-fluid overallcontainer infoText" id="abstractonline">
-            <div class="container-fluid registrationContainer infoText">
+        
+           <div class="container-fluid registrationInfoContainer infoText">
                 <span style="font-weight: bold;color:#a70505;">Please note:</span>
                 <br>For writing the abstract please use the word template that we have prepared. For submitting the abstract you will need:
                 <ul class="ulpadding">
@@ -30,55 +34,67 @@
                 In case of problems or questions please contact our event manager <b>Cathryn Quinn</b> (cjquinn@uga.edu).
             </div>
 
-            <div class="container-fluid registrationContainer ">
+            <div class="container-fluid registrationContainer">
+                    <div class="row">
+                            <p class="text-muted pull-right"><strong>*</strong>These fields are required.</p>
+                    </div>
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="confirmation_number" style="text-align: left;">Confirmation #:</label>
-                        <div class="col-sm-10">
+                        <label class="control-label col-sm-3" for="confirmation_number" style="text-align: left;">Confirmation Number *</label>
+                        <div class="col-sm-9">
                             <input type="confirmationnumber" class="form-control" id="confirmation_number" placeholder="Enter Confirmation Number" name="confirmationnumber">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email" style="text-align: left;">Email:</label>
-                        <div class="col-sm-10">
+                        <label class="control-label col-sm-3" for="email" style="text-align: left;">Email *</label>
+                        <div class="col-sm-9">
                             <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="title" style="text-align: left;">Title:</label>
-                        <div class="col-sm-10">
+                        <label class="control-label col-sm-3" for="title" style="text-align: left;">Abstract Title *</label>
+                        <div class="col-sm-9">
                             <input type="title" class="form-control" id="abstract_title" placeholder="Enter Title" name="title">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="selectfile" style="text-align: left;">Select File:</label>
-                        <div class="col-sm-10 ">
+                        <label class="control-label col-sm-3" for="selectfile" style="text-align: left;">Abstract File *</label>
+                        <div class="col-sm-9">
                             <label class="btn btn-default">Browse <input type="file" class="hidden"></label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-2">
-                            <input type="checkbox" value="">
+                        <div class="col-sm-offset-3 col-sm-9">
+                                <input type="checkbox" id="short_talk" value=""> Consider for short talk
                         </div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="short_talk" placeholder="Please consider my abstract for a short talk." name="shorttalk" readonly style="background:#ffff;">
+                       
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                    <br>
+                                    <br>
+                                <input type="submit" class="btn btn-default" value="Submit">
+                            </div>
                         </div>
-
 
                     </div>
-
                 </form>
             </div>
 
         </div>
 
         <div class="container-fluid overallcontainer" id="abstract_submission_not_started">
+                <div class="container-fluid registrationPadding registrationTitleStyle">
+                        SFG - GlycoBioInformatics abstract submission
+                </div>
             <div class="container-fluid registrationInfoContainer infoText" id="abstract_submission_not_started1">
                 <span style="font-weight: bold;color:#a70505;">Please note:</span><br> The abstract submission will start Saturday September 01 and end on Saturday December 01. In case of problems or questions please contact our event manager <b>Cathryn Quinn</b>                (cjquinn@uga.edu).
             </div>
         </div>
 
         <div class="container-fluid overallcontainer infoText" id="abstract_submission_over">
+                <div class="container-fluid registrationPadding registrationTitleStyle">
+                        SFG - GlycoBioInformatics abstract submission
+                </div>
             <div class="container-fluid registrationInfoContainer infoText" id="abstract_submission_over1">
                 The abstract submission was closed on Friday December 01. In case of problems or questions please contact our event manager
                 <b>Cathryn Quinn</b> (cjquinn@uga.edu).
