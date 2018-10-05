@@ -4,13 +4,13 @@ $(function () {
 
     $('#registration-form').on('submit', function (e) {
 
-        // displays the loading gif when the ajax call starts
-        $('#loading_image').fadeIn();
+        
 
         if(!e.isDefaultPrevented()){
-
+            
             e.preventDefault();
-
+            // displays the loading gif when the ajax call starts
+            $('#loading_image').fadeIn();
             var title_ddl = document.getElementById("title");    
             var title = title_ddl.options[title_ddl.selectedIndex].value;
             var first_name = $("#first_name").val();
