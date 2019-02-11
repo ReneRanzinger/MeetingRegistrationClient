@@ -4,9 +4,8 @@
  * @returns URL for the requested type
  */
 function getWsUrl(request,conf_code,post_reg_code) {
-    //var ws_base = "http://glycomics.ccrc.uga.edu/meetings/api/";
-	var ws_base = "http://localhost:8080/";
-	//var ws_base = "http://192.168.99.100:8081/";
+    var ws_base = "http://glycomics.ccrc.uga.edu/meetings/api/";
+	//var ws_base = "http://localhost:8080/";
     
 	var ws_base_abstract = ws_base+"abstract";
     var ws_base_registration = ws_base +"registration";
