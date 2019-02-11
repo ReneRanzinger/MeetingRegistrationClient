@@ -72,6 +72,12 @@
     margin:0px;
 }
 
+.abstract-error-text-padding {
+    padding-left: 26.6%;
+    padding-top: 40px;
+    margin:0px;
+}
+
 /* //test */
 
 .alertify .ajs-header {

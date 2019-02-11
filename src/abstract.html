@@ -16,7 +16,10 @@
     <!-- <link type="text/css " rel="stylesheet " media="all " href="css/style.css "> -->
     <link rel="stylesheet" type="text/css" href="libraries/alertifyjs/css/alertify.css">
     <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
-    <body>
+    <body onload="WhichDivToHide()">
+        <div id="loading_image">
+                <img src="images/page_loading.gif" />
+        </div>
         <div class="container-fluid overallcontainer" id="abstract_online">
             <div class="container-fluid registrationPadding registrationTitleStyle">
                 SFG - GlycoBioInformatics abstract submission
@@ -35,44 +38,50 @@
             </div>
 
             <div class="container-fluid registrationContainer">
-                    <div class="row">
-                            <p class="text-muted pull-right"><strong>*</strong>These fields are required.</p>
-                    </div>
-                <form class="form-horizontal">
+                <div class="row">
+                        <p class="text-muted pull-right"><strong>*</strong>These fields are required.</p>
+                </div>
+
+                <form class="form-horizontal" id="data" method="post" enctype="multipart/form-data">
+                    <div class="messages" id="error-messages-box"></div>
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="confirmation_number" style="text-align: left;">Confirmation Number *</label>
                         <div class="col-sm-9">
-                            <input type="confirmationnumber" class="form-control" id="confirmation_number" placeholder="Enter Confirmation Number" name="confirmationnumber">
+                            <input type="confirmationnumber" class="form-control" id="confirmation_number" placeholder="Enter Confirmation Number" name="confirmationNumber" required="required" pattern=".*\S.*" maxlength="15" data-error="Confrimation Number is required." data-pattern-error="Empty whitespaces are not allowed for Confirmation Number">
                         </div>
+                        <div class="help-block with-errors abstract-error-text-padding"></div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="email" style="text-align: left;">Email *</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="required" maxlength="125" data-error="The input is not a valid email address.">
                         </div>
+                        <div class="help-block with-errors abstract-error-text-padding"></div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="title" style="text-align: left;">Abstract Title *</label>
                         <div class="col-sm-9">
-                            <input type="title" class="form-control" id="abstract_title" placeholder="Enter Title" name="title">
+                            <input type="title" class="form-control" id="abstract_title" placeholder="Enter Title" name="abstractTitle" required="required" pattern=".*\S.*" maxlength="1024" data-error="Abstract Title is required." data-pattern-error="Empty whitespaces are not allowed for Abstract Title.">
                         </div>
+                        <div class="help-block with-errors abstract-error-text-padding"></div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="selectfile" style="text-align: left;">Abstract File *</label>
                         <div class="col-sm-9">
-                            <label class="btn btn-default">Browse <input type="file" class="hidden"></label>
+                            <input class="btn btn-default" id ="browseButton" type="file" name="file" class="hidden" required="required"></label>
                         </div>
+                        <div class="help-block with-errors abstract-error-text-padding"></div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-9">
-                                <input type="checkbox" id="short_talk" value=""> Consider for short talk
+                                <input type="checkbox" id="short_talk" value="false" name="considerTalk"> Consider for short talk
                         </div>
                        
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-9">
                                     <br>
                                     <br>
-                                <input type="submit" class="btn btn-default" value="Submit">
+                                <input type="submit" id="form-submit" class="btn btn-default" value="Submit">
                             </div>
                         </div>
 
@@ -87,8 +96,9 @@
                         SFG - GlycoBioInformatics abstract submission
                 </div>
             <div class="container-fluid registrationInfoContainer infoText" id="abstract_submission_not_started1">
-                <span style="font-weight: bold;color:#a70505;">Please note:</span><br> The abstract submission will start Saturday September 01 and end on Saturday December 01. In case of problems or questions please contact our event manager <b>Cathryn Quinn</b>                (cjquinn@uga.edu).
+                <span style="font-weight: bold;color:#a70505;">Please note:</span><br> The abstract submission will start on <label class="absStart"></label> and end on <label class="absEnd"></label>. In case of problems or questions please contact our event manager <b>Cathryn Quinn</b>                (cjquinn@uga.edu).
             </div>
+            <br>
         </div>
 
         <div class="container-fluid overallcontainer infoText" id="abstract_submission_over">
@@ -96,23 +106,22 @@
                         SFG - GlycoBioInformatics abstract submission
                 </div>
             <div class="container-fluid registrationInfoContainer infoText" id="abstract_submission_over1">
-                The abstract submission was closed on Friday December 01. In case of problems or questions please contact our event manager
+                The abstract submission was closed on <label class="absEnd"></label>. In case of problems or questions please contact our event manager
                 <b>Cathryn Quinn</b> (cjquinn@uga.edu).
-                <p>
-                    <span style="font-weight: bold;color:#a70505;">Please note:</span> Registration for the satellite meeting on this page allows to attend the satellite only. If you plan to participate in the SFG meeting as well please use the
-                    <a href="http://www.glycobiology.org/registration.php">main registration page</a> to sign up for the main meeting.
-                </p>
-
+                
             </div>
+            <br>
         </div>
 
     </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
-    <!--Script for jquery-->
+
     <script type="text/javascript" src="libraries/jquery/jquery-3.1.js"></script>
-    <link type="text/css " rel="stylesheet " href="main_styles.css " />
-    <link type="text/css " rel="stylesheet " media="all " href="css/style.css ">
+    <script type="text/javascript" src="libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libraries/alertifyjs/alertify.js"></script>
+    <script type="text/javascript" src="libraries/validator.js"></script>
+    <script type="text/javascript" src="js/ws_url.js"></script>
+    <script type="text/javascript" src="js/abstract_status.js"></script>
+    <script type="text/javascript" src="js/abstract_submission.js"></script>
 </head>
 
 </html>

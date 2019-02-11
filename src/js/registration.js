@@ -4,8 +4,6 @@ $(function () {
 
     $('#registration-form').on('submit', function (e) {
 
-        
-
         if(!e.isDefaultPrevented()){
             
             e.preventDefault();
@@ -72,7 +70,6 @@ $(function () {
                     $('#loading_image').fadeOut();             
                 },
                 error: function(response) {
-                    console.log(response);
                     if(response.status < 500){
                         var messageAlert = 'alert-danger';
                         var messageText = response.responseJSON.errors.toString();

@@ -1,4 +1,4 @@
-var conferenceCode="CODEHERE";
+var conferenceCode="XABKSHRKZU";
 
 function WhichDivToHide() {
 
@@ -23,7 +23,7 @@ function WhichDivToHide() {
                     .setting({
                         'title': 'Conference Not Found',
                         'label':'OK',
-                        'message': 'Could not find the Registration page for conference. Please use the correct URL or Contact Organizers.'
+                        'message': 'Could not find the Abstract Submission page for the conference. Please use the correct URL or Contact Organizers.'
                     }).show();
             }else {
                 alertify.alert()
@@ -44,33 +44,19 @@ function HiddingDiv(data) {
     var statuscode = data['statusCode'];
     conferenceCode = data['conferenceCode'];
     if (statuscode == -1) {
-        var z = document.getElementById("registrationover");
-        $('.regEnd').html(data['registrationEnd']);
+        var z = document.getElementById("abstract_submission_over");
+         $('.absEnd').html(data['abstractEnd']);
         z.style.display = "block";
     } else if (statuscode == 0) {
-        var z = document.getElementById("registrationonline");
+        var z = document.getElementById("abstract_online");
         z.style.display = "block";
-        configureRegistrationDropDown(data);
     } else if (statuscode == 1) {
-        var z = document.getElementById("registrationnotstarted");
-        $('.regStart').html(data['registrationStart']);
-        $('.regEnd').html(data['registrationEnd']);
+        var z = document.getElementById("abstract_submission_not_started");
+         $('.absStart').html(data['abstractStart']);
+         $('.absEnd').html(data['abstractEnd']);
         z.style.display = "block";
     }
     $('#loading_image').fadeOut();
-}
-
-function configureRegistrationDropDown(data) {
-    var fee_ddl = document.getElementById("registrationfee");
-    for (i = 0; i < data.fees.length; i++) {
-        var feeObj = data.fees[i];
-        var regNameString = feeObj["name"];
-        var regFeeInt = feeObj["amount"]; 
-        var option = document.createElement("option");
-        option.text = regNameString + " - $" + regFeeInt + ".0";
-        option.value = regNameString + " " + regFeeInt;
-        fee_ddl.add(option);
-    }
 }
 
 function getUrlParameter(name) {
