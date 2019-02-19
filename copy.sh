@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # User input for the destination directory
-echo Please enter the destination directory(eg: /var/www/html/{folderName})
+echo Please enter the destination directory,
 read destination
 
 cp -R ./src/* $destination 
@@ -12,5 +12,5 @@ echo Please enter the conference code.
 read confCode
 sed_param=s/conferenceCode=.*/conferenceCode=\"$confCode\"/
 
-sed -i '' "$sed_param" $destination/js/conference_status.js
-sed -i '' "$sed_param" $destination/js/abstract_status.js
+sed -i "$sed_param" $destination/js/conference_status.js
+sed -i "$sed_param" $destination/js/abstract_status.js
