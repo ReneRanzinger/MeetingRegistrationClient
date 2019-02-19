@@ -1,4 +1,4 @@
-var conferenceCode="XABKSHRKZU";
+var conferenceCode="CODEHERE";
 
 function WhichDivToHide() {
 
