@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # User input for the destination directory
-echo Please enter the destination directory,
+echo Please enter the full destination directory path
 read destination
 
 cp -R ./src/* $destination 
