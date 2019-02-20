@@ -4,9 +4,9 @@ function WhichDivToHide() {
 
     var endpoint;
     if(getUrlParameter('postRegCode')!=''){
-       endpoint=getWsUrl("post_reg",conferenceCode,getUrlParameter('postRegCode'))
+       endpoint=getWsUrl("abstract_info_post_reg",conferenceCode,getUrlParameter('postRegCode'))
     } else {
-        endpoint=getWsUrl("info",conferenceCode)
+        endpoint=getWsUrl("abstract_info",conferenceCode)
     }
 
     $.ajax({
