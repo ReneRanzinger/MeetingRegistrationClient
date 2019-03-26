@@ -65,10 +65,10 @@ function configureRegistrationDropDown(data) {
     for (i = 0; i < data.fees.length; i++) {
         var feeObj = data.fees[i];
         var regNameString = feeObj["name"];
-        var regFeeInt = feeObj["amount"]; 
+        var regFee = feeObj["amount"]; 
         var option = document.createElement("option");
-        option.text = regNameString + " - $" + regFeeInt + ".0";
-        option.value = regNameString + " " + regFeeInt;
+        option.text = regNameString + " - $" + parseFloat(regFee).toFixed(2);
+        option.value = regNameString + " " + regFee;
         fee_ddl.add(option);
     }
 }
